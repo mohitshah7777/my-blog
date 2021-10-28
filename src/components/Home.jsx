@@ -19,7 +19,7 @@ const Home = () => {        //parent component
     return (
         //child component = Bloglist
         <div className="home">
-            <BlogList list={list}/>             
+            <BlogList list={list} title="All blogs"/>             
         </div>
     );
 }
