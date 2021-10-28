@@ -1,7 +1,8 @@
 import { useState,useEffect } from "react"
-import { getList } from "./services/Api";
+import { getList } from "../services/Api";
+import BlogList from "./BlogList";
 
-const Home = () => {
+const Home = () => {        //parent component
 
     const [list, setList] = useState([]);
 
@@ -16,13 +17,9 @@ const Home = () => {
     }, [])
 
     return (
+        //child component = Bloglist
         <div className="home">
-            {list.map((lists) => (
-                <div className="blog-preview" key={lists.id}>
-                <h2>Name : {lists.name}</h2>
-                <p>Email : {lists.email}</p>
-                </div>
-            ))}
+            <BlogList list={list}/>             
         </div>
     );
 }
