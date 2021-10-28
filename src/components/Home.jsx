@@ -19,7 +19,9 @@ const Home = () => {        //parent component
     return (
         //child component = Bloglist
         <div className="home">
-            <BlogList list={list} title="All blogs"/>             
+            <BlogList list={list} title="All blogs"/>
+            {/* filter and reusability of components */ }           
+            <BlogList list={list.filter((lists) => lists.name === "Patricia Lebsack")} title="Filtered Blog"/>           
         </div>
     );
 }
