@@ -1,21 +1,28 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
+import { getList } from "./services/Api";
 
 const Home = () => {
 
-    const [name, setName] = useState("Mario")
-    const [age, setAge] = useState(25)
+    const [list, setList] = useState([]);
 
-    const handleClickMe = () => {
-        setName("Luigi")
-        setAge(30)
-    }
+    useEffect(() => {
+        let mounted = true;
+        getList().then(items => {
+            if(mounted){
+                setList(items)
+            }
+        })
+        return () => mounted = false;
+    }, [])
 
     return (
         <div className="home">
-            <h1>HomePage</h1>
-            <p>{name} is {age} years old</p>
-            <button onClick={handleClickMe}>Click me</button>
-            <br/><br/>
+            {list.map((lists) => (
+                <div className="blog-preview" key={lists.id}>
+                <h2>Name : {lists.name}</h2>
+                <p>Email : {lists.email}</p>
+                </div>
+            ))}
         </div>
     );
 }
