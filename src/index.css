@@ -53,3 +53,20 @@
   color: #f1356d;
   margin-bottom: 8px;
 }
+
+/* delete button */
+button {
+  background-color: #f1356d;
+  color:white;
+  padding: 10px 5px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 0.9;
+  border-radius: 15px;
+}
+
+button:hover {
+  opacity:3;
+}

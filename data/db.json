@@ -1,0 +1,16 @@
+{
+    "blogs": [
+        {
+            "title" : "My first blog",
+            "body": "why do we fall ill abcd bsfgh ifhk",
+            "author": "Mario",
+            "id": 1
+        },
+        {
+            "title" : "My second blog",
+            "body": "why do we fall ill abcd bsfgh ifhk",
+            "author": "Mario",
+            "id": 2
+        }
+    ]
+}

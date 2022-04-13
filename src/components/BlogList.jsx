@@ -1,4 +1,4 @@
-const BlogList = ({list, title}) => {       //destructuring the props
+const BlogList = ({list, title, handleDelete}) => {       //destructuring the props
 
     // const list = props.list              
     // const title = props.title
@@ -8,8 +8,10 @@ const BlogList = ({list, title}) => {       //destructuring the props
             <h2>{title}</h2>
             {list.map((lists) => (
                 <div className="blog-preview" key={lists.id}>
-                    <h2>Name : {lists.name}</h2>
-                    <p>Email : {lists.email}</p>
+                    <h2>{lists.name}</h2>
+                    <p>{lists.title}</p>
+                    <p>{lists.blog}</p>
+                    <button className="button" onClick={() => handleDelete(lists.id)}>Delete</button>
                 </div>
             ))}
         </div>
